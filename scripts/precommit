@@ -1,0 +1,5 @@
+#!/bin/bash -eu
+
+lint-staged
+yarn lint
+yarn test

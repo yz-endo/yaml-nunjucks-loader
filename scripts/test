@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+repo_top=$(git rev-parse --show-toplevel)
+
+mkdir -p "${repo_top}/test/output"
+
+touch "${repo_top}/test/output/sample1.js"
+touch "${repo_top}/test/output/sample2.js"
+
+jest "$@"

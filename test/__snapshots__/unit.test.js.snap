@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[unit] loader works with sample1.js 1`] = `
+"var nunjucks = require(\\"nunjucks/browser/nunjucks\\");
+var YAML = require(\\"yaml\\");
+nunjucks.configure({});
+function render(params) {
+  return YAML.parse(nunjucks.renderString(\\"test:\\\\n  result: {{ name }}\\\\n\\", params));
+}
+module.exports = render;"
+`;
+
+exports[`[unit] loader works with sample2.js 1`] = `
+"var nunjucks = require(\\"nunjucks/browser/nunjucks\\");
+var YAML = require(\\"yaml\\");
+nunjucks.configure({});
+function render(params) {
+  return YAML.parse(nunjucks.renderString(\\"resultItems:\\\\n  {% for item in items %}\\\\n  - name: {{ item.name }}\\\\n    value: {{ item.value }}\\\\n  {% endfor %}\\\\n\\", params));
+}
+module.exports = render;"
+`;
