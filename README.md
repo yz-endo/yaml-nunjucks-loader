@@ -86,4 +86,5 @@ const podManifest = podTemplate({ name: 'example' })
 
 ## Examples
 
+* [React Example App](examples/react-app)
 * [Vue Example App](examples/vue)

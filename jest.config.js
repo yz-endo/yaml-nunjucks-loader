@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'node',
-  testRegex: '\\.test\\.js$',
+  testRegex: '\/test\/.*\\.test\\.js$',
   moduleFileExtensions: ['js'],
   verbose: true
 }
