@@ -4,4 +4,5 @@ top="$(dirname "${BASH_SOURCE[0]}")/.."
 
 yarn link
 
-(cd "${top}/examples/vue" && yarn local-link)
+(cd "${top}/examples/react-app" && yarn local-link)
+(cd "${top}/examples/vue-app" && yarn local-link)
