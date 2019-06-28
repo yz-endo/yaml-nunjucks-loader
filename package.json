@@ -15,7 +15,8 @@
   "scripts": {
     "lint": "scripty",
     "precommit": "scripty",
-    "test": "scripty"
+    "test": "scripty",
+    "local-link": "scripty"
   },
   "scripty": {
     "silent": true

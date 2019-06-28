@@ -5,14 +5,19 @@ a function that creates an JS object from given parameters.
 
 ## Installation
 
-(TBD)
+yaml-nunjucks-loader requires [yaml](https://www.npmjs.com/package/yaml) and [Nunjucks](https://mozilla.github.io/nunjucks/).
 
-Install the follwoing two libraries:
+Install required libraries to your NPM project:
 
-* [yaml](https://www.npmjs.com/package/yaml)
-* [Nunjucks](https://mozilla.github.io/nunjucks/)
+```sh
+$ npm install --save-dev yaml-nunjucks-loader yaml nunjucks
+```
 
-yaml-nunjucks-loader generates JS code that import and use them.
+If you use Yarn, execute this instead:
+
+```sh
+$ yarn add --dev yaml-nunjucks-loader yaml nunjucks
+```
 
 ## Usage
 
@@ -78,3 +83,7 @@ const podManifest = podTemplate({ name: 'example' })
   }
 }
 ```
+
+## Examples
+
+* [Vue Example App](examples/vue)

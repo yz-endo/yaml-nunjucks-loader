@@ -1,0 +1,5 @@
+example:
+  {% for item in items %}
+  - name: {{ item.name | capitalize }}
+    value: {{ item.value }}
+  {% endfor %}
