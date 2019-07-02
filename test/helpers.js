@@ -8,24 +8,24 @@ async function sleep(ms) {
   await new Promise(resolve => setTimeout(resolve, ms))
 }
 
-function compile(entry, target = 'web', mode = 'development', onMemory = true) {
-  const compiler = webpack(
-    {
-      target,
-      mode,
-      entry,
-      externals: ['nunjucks', 'nunjucks/browser/nunjucks', 'yaml'],
-      devtool: 'sourcemap',
-      output: {
-        path: outputPath,
-        filename: path.basename(entry),
-        libraryTarget: 'umd'
-      },
-      module: {
-        rules: [{ test: /\.yaml$/, use: [{ loader: path.resolve(__dirname, '../loader') }] }]
-      }
+function compile(entry, target = 'web', mode = 'development', onMemory = true, options = {}) {
+  const qs = () => (Object.keys(options).length > 0 ? `?${JSON.stringify(options, undefined, 0)}` : '')
+
+  const compiler = webpack({
+    target,
+    mode,
+    entry,
+    externals: ['nunjucks', 'nunjucks/browser/nunjucks', 'yaml'],
+    devtool: 'sourcemap',
+    output: {
+      path: outputPath,
+      filename: path.basename(entry),
+      libraryTarget: 'umd'
     },
-  )
+    module: {
+      rules: [{ test: /\.yaml$/, use: [{ loader: path.resolve(__dirname, '../loader') + qs() }] }]
+    }
+  })
   if (onMemory) {
     compiler.outputFileSystem = new MemoryFS()
   }

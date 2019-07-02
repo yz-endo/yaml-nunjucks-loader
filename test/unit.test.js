@@ -18,12 +18,10 @@ describe('[unit] loader', () => {
 
     const yaml = modules.find(m => m.name.endsWith('sample1.yaml'))
     expect(yaml).toBeTruthy()
-    expect(yaml.source).toMatch(/var nunjucks = require\(".*nunjucks\/browser\/nunjucks.*"\);/)
+    expect(yaml.source).toMatch(/var nunjucks = require\(".*nunjucks\/browser\/nunjucks-slim.*"\);/)
     expect(yaml.source).toMatch(/var YAML = require\(".*yaml.*"\);/)
-    expect(yaml.source).toMatch(/nunjucks.configure\(\{\}\);/)
-    expect(yaml.source).toMatch(
-      /return YAML\.parse\(nunjucks\.renderString\(".*result:.*", params\)\);/
-    )
+    expect(yaml.source).toMatch(/\{"autoescape":false\}/)
+    expect(yaml.source).toMatch(/return YAML\.parse\(env\.render\("sample1.yaml", params\)\);/)
     expect(yaml.source).toMatch(/module\.exports = render;/)
     expect(yaml.source).toMatchSnapshot()
   })
@@ -38,12 +36,10 @@ describe('[unit] loader', () => {
 
     const yaml = modules.find(m => m.name.endsWith('sample2.yaml'))
     expect(yaml).toBeTruthy()
-    expect(yaml.source).toMatch(/var nunjucks = require\(".*nunjucks\/browser\/nunjucks.*"\);/)
+    expect(yaml.source).toMatch(/var nunjucks = require\(".*nunjucks\/browser\/nunjucks-slim.*"\);/)
     expect(yaml.source).toMatch(/var YAML = require\(".*yaml.*"\);/)
-    expect(yaml.source).toMatch(/nunjucks.configure\(\{\}\);/)
-    expect(yaml.source).toMatch(
-      /return YAML\.parse\(nunjucks\.renderString\(".*resultItems:.*", params\)\);/
-    )
+    expect(yaml.source).toMatch(/\{"autoescape":false\}/)
+    expect(yaml.source).toMatch(/return YAML\.parse\(env\.render\("sample2.yaml", params\)\);/)
     expect(yaml.source).toMatch(/module\.exports = render;/)
     expect(yaml.source).toMatchSnapshot()
   })
