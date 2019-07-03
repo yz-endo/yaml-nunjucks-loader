@@ -3,7 +3,7 @@ const lu = require('loader-utils')
 
 module.exports = function loader(source) {
   const query = lu.getOptions(this) || {}
-  const config = Object.assign({}, { autoescape: false }, query.nunjucks || {})
+  const config = Object.assign({ autoescape: false }, query.nunjucks || {})
   const env = new nunjucks.Environment()
   const relPath = this.resourcePath.substr(this.context.length + 1)
   const precompiled = nunjucks.precompileString(source, {

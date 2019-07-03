@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`[unit] loader works with loader options 1`] = `
+"var YAML = require(\\"yaml\\");
+var nunjucks = require(\\"nunjucks/browser/nunjucks-slim\\");
+const env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
+  \\"sample2.yaml\\": (function () { function root(env, context, frame, runtime, cb) {
+var lineno = 0;
+var colno = 0;
+var output = \\"\\";
+try {
+var parentTemplate = null;
+output += \\"resultItems:\\\\n  \\";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, \\"items\\");
+if(t_3) {t_3 = runtime.fromIterator(t_3);
+var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set(\\"item\\", t_4);
+frame.set(\\"loop.index\\", t_1 + 1);
+frame.set(\\"loop.index0\\", t_1);
+frame.set(\\"loop.revindex\\", t_2 - t_1);
+frame.set(\\"loop.revindex0\\", t_2 - t_1 - 1);
+frame.set(\\"loop.first\\", t_1 === 0);
+frame.set(\\"loop.last\\", t_1 === t_2 - 1);
+frame.set(\\"loop.length\\", t_2);
+output += \\"\\\\n  - name: \\";
+output += runtime.suppressValue(runtime.memberLookup((t_4),\\"name\\"), env.opts.autoescape);
+output += \\"\\\\n    value: \\";
+output += runtime.suppressValue(runtime.memberLookup((t_4),\\"value\\"), env.opts.autoescape);
+output += \\"\\\\n  \\";
+;
+}
+}
+frame = frame.pop();
+output += \\"\\\\n\\";
+if(parentTemplate) {
+parentTemplate.rootRenderFunc(env, context, frame, runtime, cb);
+} else {
+cb(null, output);
+}
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+ })()
+}), {\\"autoescape\\":true,\\"throwOnUndefined\\":true});
+function render(params) {
+  return YAML.parse(env.render(\\"sample2.yaml\\", params));
+}
+module.exports = render;"
+`;
+
 exports[`[unit] loader works with sample1.js 1`] = `
 "var YAML = require(\\"yaml\\");
 var nunjucks = require(\\"nunjucks/browser/nunjucks-slim\\");

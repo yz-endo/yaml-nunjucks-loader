@@ -1,5 +1,6 @@
 example:
   {% for item in items %}
-  - name: {{ item.name | capitalize }}
+  - name: "{{ item.name | safe }}"
+    escaped: "{{ item.name }}"
     value: {{ item.value }}
   {% endfor %}

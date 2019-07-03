@@ -35,7 +35,15 @@ Webpack configuration:
 }
 ```
 
-`pod.yaml`:
+You can pass [Nunjucks configuration options](http://mozilla.github.io/nunjucks/api.html#configure) as a JSON query parameter.
+
+```js
+{ tests: /\.yaml$/, loader: 'yaml-nunjucks-loader?{nunjucks:{autoescape:true}}' }
+```
+
+[examples/react-app](examples/react-app) uses the above configuration.
+
+YAML template `pod.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -48,17 +56,19 @@ spec:
       image: ubuntu:trusty
       imagePullPolicy: IfNotPresent
       command: ['sleep']
-      args: ['600']
+      args: ['{{ sleep }}']
 ```
 
 `name` will be filled at runtime.
 
-JS code:
+JavaScript code:
 
 ```js
 import podTemplate from './pod.yaml'
 
-const podManifest = podTemplate({ name: 'example' })
+const podManifest = podTemplate({ name: 'example', sleep: 600 })
+
+console.log(podManifest)
 ```
 
 `podManifest` is an Object as follows:

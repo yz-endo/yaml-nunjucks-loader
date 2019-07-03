@@ -6,9 +6,9 @@ import template from './example.yaml';
 function App() {
   function renderYaml() {
     return JSON.stringify(template({ items: [
-      { name: 'foo', value: 1 },
-      { name: 'bar', value: 2 },
-      { name: 'baz', value: 3 }
+      { name: '<foo>', value: 1 },
+      { name: '<bar>', value: 2 },
+      { name: '<baz>', value: 3 }
     ] }))
   }
   return (
