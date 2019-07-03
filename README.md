@@ -98,3 +98,8 @@ console.log(podManifest)
 
 * [React Example App](examples/react-app)
 * [Vue Example App](examples/vue-app)
+
+## Limitations
+
+* Accessing external file is not possible
+  * [Template inheritance](http://mozilla.github.io/nunjucks/templating.html#template-inheritance), [include](http://mozilla.github.io/nunjucks/templating.html#include) and [import](http://mozilla.github.io/nunjucks/templating.html#import) are not supported
