@@ -1,7 +1,10 @@
 # yaml-nunjucks-loader
 
 yaml-nunjucks-loader is an Webpack loader which loads Nunjucks-templated YAML file and returns
-a function that creates an JS object from given parameters.
+a function that creates a JavaScript object with given parameters.
+
+Template files are compiled to JavaScript and embedded into a bundle. Applying parameters and
+parsing YAML are executed at runtime.
 
 ## Installation
 
@@ -34,14 +37,6 @@ Webpack configuration:
   }
 }
 ```
-
-You can pass [Nunjucks configuration options](http://mozilla.github.io/nunjucks/api.html#configure) as a JSON query parameter.
-
-```js
-{ tests: /\.yaml$/, loader: 'yaml-nunjucks-loader?{nunjucks:{autoescape:true}}' }
-```
-
-[examples/react-app](examples/react-app) uses the above configuration.
 
 YAML template `pod.yaml`:
 
@@ -93,6 +88,28 @@ console.log(podManifest)
   }
 }
 ```
+
+## Configuration
+
+You can pass [Nunjucks configuration options](http://mozilla.github.io/nunjucks/api.html#configure) as a JSON query parameter.
+
+Example:
+
+```js
+{
+  // ...
+  modules: {
+    rules: [
+      // ...
+      { tests: /\.yaml$/, loader: 'yaml-nunjucks-loader?{nunjucks:{autoescape:true}}' }
+    ]
+  }
+}
+```
+
+[examples/react-app](examples/react-app) uses the above configuration.
+
+Since Nunjucks is used to render YAML instead of HTML, `autoescape` is by default `false`. `<` will not be converted to `&lt;`. You can change this behaviour by setting `autoescape` to `true`.
 
 ## Examples
 
