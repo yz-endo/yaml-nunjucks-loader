@@ -6,20 +6,33 @@ a function that creates a JavaScript object with given parameters.
 Template files are compiled to JavaScript and embedded into a bundle. Applying parameters and
 parsing YAML are executed at runtime.
 
+## Prerequisites
+
+* [Webpack](https://www.npmjs.com/package/webpack) (>= 4)
+* [Nujucks](https://www.npmjs.com/package/nunjucks)
+* [yaml](https://www.npmjs.com/package/yaml)
+
 ## Installation
 
 yaml-nunjucks-loader requires [yaml](https://www.npmjs.com/package/yaml) and [Nunjucks](https://mozilla.github.io/nunjucks/).
 
-Install required libraries to your NPM project:
+Install required libraries to your project:
 
 ```sh
-$ npm install --save-dev yaml-nunjucks-loader yaml nunjucks
+$ npm install --save yaml nunjucks
 ```
 
-If you use Yarn, execute this instead:
+Install yaml-nunjucks-loader:
 
 ```sh
-$ yarn add --dev yaml-nunjucks-loader yaml nunjucks
+$ npm install --save-dev yaml-nunjucks-loader
+```
+
+If you use Yarn, execute the following instead:
+
+```sh
+$ yarn add yaml nunjucks
+$ yarn add --dev yaml-nunjucks-loader
 ```
 
 ## Usage
@@ -89,7 +102,7 @@ console.log(podManifest)
 }
 ```
 
-## Configuration
+## Nunjucks Configuration
 
 You can pass [Nunjucks configuration options](http://mozilla.github.io/nunjucks/api.html#configure) as a JSON query parameter.
 
