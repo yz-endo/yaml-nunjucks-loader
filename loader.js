@@ -16,7 +16,7 @@ module.exports = function loader(source) {
     `var nunjucks = require("${
       this.target === 'web' ? 'nunjucks/browser/nunjucks-slim' : 'nunjucks'
     }");`,
-    'const env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({',
+    'var env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({',
     `  "${relPath}": ${precompiled}`,
     `}), ${JSON.stringify(config, undefined, 0)});`,
     'function render(params) {',

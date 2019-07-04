@@ -3,7 +3,7 @@
 exports[`[unit] loader works with loader options 1`] = `
 "var YAML = require(\\"yaml\\");
 var nunjucks = require(\\"nunjucks/browser/nunjucks-slim\\");
-const env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
+var env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
   \\"sample2.yaml\\": (function () { function root(env, context, frame, runtime, cb) {
 var lineno = 0;
 var colno = 0;
@@ -59,7 +59,7 @@ module.exports = render;"
 exports[`[unit] loader works with sample1.js 1`] = `
 "var YAML = require(\\"yaml\\");
 var nunjucks = require(\\"nunjucks/browser/nunjucks-slim\\");
-const env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
+var env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
   \\"sample1.yaml\\": (function () { function root(env, context, frame, runtime, cb) {
 var lineno = 0;
 var colno = 0;
@@ -93,7 +93,7 @@ module.exports = render;"
 exports[`[unit] loader works with sample2.js 1`] = `
 "var YAML = require(\\"yaml\\");
 var nunjucks = require(\\"nunjucks/browser/nunjucks-slim\\");
-const env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
+var env = new nunjucks.Environment(new nunjucks.PrecompiledLoader({
   \\"sample2.yaml\\": (function () { function root(env, context, frame, runtime, cb) {
 var lineno = 0;
 var colno = 0;
