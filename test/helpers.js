@@ -20,7 +20,7 @@ function compile(entry, target = 'web', mode = 'development', onMemory = true, o
     output: {
       path: outputPath,
       filename: path.basename(entry),
-      libraryTarget: 'umd'
+      libraryTarget: 'umd' // so that Node.js can import the compiled module
     },
     module: {
       rules: [{ test: /\.yaml$/, use: [{ loader: path.resolve(__dirname, '../loader') + qs() }] }]

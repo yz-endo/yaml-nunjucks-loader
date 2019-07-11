@@ -10,7 +10,7 @@ module.exports = {
   jest: {
     configure: (jestConfig) => {
       jestConfig.moduleNameMapper['\\.yaml$'] = '<rootDir>/src/__mocks__/yaml.js';
-      return jestConfig
+      return jestConfig;
     }
   }
 };
