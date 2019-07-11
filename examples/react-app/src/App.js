@@ -9,14 +9,14 @@ function App() {
       { name: '<foo>', value: 1 },
       { name: '<bar>', value: 2 },
       { name: '<baz>', value: 3 }
-    ] }))
+    ] }), undefined, 2);
   }
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Rendered Object</h2>
-        <textarea>{renderYaml()}</textarea>
+        <textarea rows="20" value={renderYaml()} readOnly />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

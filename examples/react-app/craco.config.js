@@ -6,5 +6,11 @@ module.exports = {
       webpackConfig.module.rules[2].oneOf.unshift({ test: /\.yaml$/, use: 'yaml-nunjucks-loader?{nunjucks:{autoescape:true}}' });
       return webpackConfig;
     }
+  },
+  jest: {
+    configure: (jestConfig) => {
+      jestConfig.moduleNameMapper['\\.yaml$'] = '<rootDir>/src/__mocks__/yaml.js';
+      return jestConfig
+    }
   }
 };
