@@ -8,7 +8,6 @@
     "url": "https://github.com/aapf/yaml-nunjucks-loader.git"
   },
   "license": "MIT",
-  "private": true,
   "keywords": [
     "nunjucks",
     "template",
