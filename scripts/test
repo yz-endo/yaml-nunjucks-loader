@@ -1,0 +1,12 @@
+#!/bin/bash -eu
+
+repo_top=$(git rev-parse --show-toplevel)
+
+mkdir -p "${repo_top}/test/output"
+
+# These files must exist before Jest starts so that Jest's `require()`
+# recognizes them later
+touch "${repo_top}/test/output/sample1.js"
+touch "${repo_top}/test/output/sample2.js"
+
+jest "$@"

@@ -1,0 +1,5 @@
+resultItems:
+  {% for item in items %}
+  - name: {{ item.name }}
+    value: {{ item.value }}
+  {% endfor %}
