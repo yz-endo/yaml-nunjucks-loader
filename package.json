@@ -12,6 +12,9 @@
     "webpack-loader",
     "yaml"
   ],
+  "files": [
+    "loader.js"
+  ],
   "scripts": {
     "lint": "scripty",
     "precommit": "scripty",
