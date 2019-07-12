@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "description": "Nunjucks-templated YAML loader for Webpack",
   "main": "loader.js",
-  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aapf/yaml-nunjucks-loader.git"
+  },
+  "license": "MIT",
   "private": true,
   "keywords": [
     "nunjucks",
