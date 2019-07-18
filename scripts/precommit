@@ -1,5 +1,20 @@
 #!/bin/bash -eu
 
 lint-staged
-yarn lint
 yarn test
+yarn audit
+
+(
+    cd examples/react-app
+    yarn
+    yarn link yaml-nunjucks-loader
+    CI=true SKIP_PREFLIGHT_CHECK=true yarn test
+    yarn audit
+)
+
+(
+    cd examples/vue-app
+    yarn
+    yarn link yaml-nunjucks-loader
+    yarn audit
+)

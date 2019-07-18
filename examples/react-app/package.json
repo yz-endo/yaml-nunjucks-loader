@@ -33,6 +33,6 @@
     "yaml": "^1.6.0"
   },
   "devDependencies": {
-    "@craco/craco": "^5.2.3"
+    "@craco/craco": "^5.2.4"
   }
 }

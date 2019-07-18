@@ -32,35 +32,26 @@
       "pre-commit": "yarn precommit"
     }
   },
-  "lint-staged": {
-    "linters": {
-      "{src,test}/**/*.ts": [
-        "prettier-eslint --write",
-        "git add"
-      ]
-    },
-    "ignore": []
-  },
   "peerDependencies": {
-    "nunjucks": "^3.0.0",
-    "webpack": "^4.0.0",
-    "yaml": "^1.0.0"
+    "nunjucks": "^3.2.0",
+    "webpack": "^4.36.1",
+    "yaml": "^1.6.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.1",
+    "eslint-plugin-jest": "^22.10.0",
     "eslint-plugin-node": "^9.1.0",
-    "husky": "^2.5.0",
+    "husky": "^3.0.0",
     "jest": "^24.8.0",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.2.0",
     "memory-fs": "^0.4.1",
     "nunjucks": "^3.2.0",
     "prettier-eslint-cli": "^5.0.0",
     "scripty": "^1.9.1",
-    "webpack": "^4.35.0",
-    "yaml": "^1.5.0"
+    "webpack": "^4.36.1",
+    "yaml": "^1.6.0"
   },
   "dependencies": {
     "loader-utils": "^1.2.3"
