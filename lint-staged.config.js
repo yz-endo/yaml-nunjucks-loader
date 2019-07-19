@@ -8,7 +8,7 @@ module.exports = {
       ...match.map(file => [
         `prettier-eslint --write ${file}`,
         `eslint ${file}`,
-        `git add --patch ${file}`
+        `git add ${file}`
       ])
     )
   }
